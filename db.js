@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
 
-    host: "mysql.railway.internal",
+    host: "mainline.proxy.rlwy.net",
 
     user: "root",
 
@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
 
     database: "railway",
 
-    port: 3306
+    port: 43578
 
 });
 
