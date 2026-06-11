@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
 
     database: "railway",
 
-    port: 3008
+    port: 3306
 
 });
 
