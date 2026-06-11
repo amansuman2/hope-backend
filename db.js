@@ -1,6 +1,6 @@
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
 
     host: "mainline.proxy.rlwy.net",
 
@@ -10,25 +10,14 @@ const connection = mysql.createConnection({
 
     database: "railway",
 
-    port: 43578
+    port: 43578,
+
+    waitForConnections: true,
+
+    connectionLimit: 10,
+
+    queueLimit: 0
 
 });
 
-connection.connect((err) => {
-
-    if(err){
-
-        console.log(err);
-
-    }
-    else{
-
-        console.log(
-            "Database Connected"
-        );
-
-    }
-
-});
-
-module.exports = connection;
+module.exports = pool;
